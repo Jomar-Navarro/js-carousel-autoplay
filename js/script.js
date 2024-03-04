@@ -54,24 +54,35 @@ topArrow.addEventListener('click', function(){
   thumbnailCollector[counterImg].classList.add('active')
 })
 
-
-const myInterval = setInterval(myTime, 3000);
-
-function myTime() {
 // Freccia in basso
-downArrow.addEventListener('click', myTime);
-  
+downArrow.addEventListener('click', function() {
   itemsCollector[counterImg].classList.add('hide');
   thumbnailCollector[counterImg].classList.remove('active');
   counterImg++;
-
+  
   // Alla fine del contatore dell'array, l'immagine ritorna a 0
   if (counterImg >= images.length) {
     counterImg = 0;
   }
+  
+  itemsCollector[counterImg].classList.remove('hide');
+  thumbnailCollector[counterImg].classList.add('active');
+});
+  
+// 
+const myInterval = setInterval(myTime, 3000);
 
+function myTime() {
+  itemsCollector[counterImg].classList.add('hide');
+  thumbnailCollector[counterImg].classList.remove('active');
+  counterImg++;
+  
+  // Alla fine del contatore dell'array, l'immagine ritorna a 0
+  if (counterImg >= images.length) {
+    counterImg = 0;
+  }
+  
   itemsCollector[counterImg].classList.remove('hide');
   thumbnailCollector[counterImg].classList.add('active');
 }
-
 
