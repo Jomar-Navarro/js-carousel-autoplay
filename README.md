@@ -11,5 +11,6 @@ Per evitare conflitti con lo scroll manuale, quando il mouse si trova sopra lo s
 ## SVOLGIMENTO
 
 1. Ho creato una costante che richiama una funzione ad uno specifico intervallo di tempo (3 secondi);
-2. Ho creato una funzione che include tutto l'evento click del bottone 'downArrow';
-3. Nell costante ho ripreseto la funzione con l'intervallo di tempo di 3 secondi.
+2. Ho creato una funzione che include tutte i comandi di funzione dei bottoni;
+3. Per non creare rindondanze nel codice ho cancellato le ripetizioni all'interno degli eventi.
+4. Negli eventi click ho ripreso il l'argomento della funzione;
