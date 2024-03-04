@@ -57,8 +57,8 @@ topArrow.addEventListener('click', function(){
 
 const myInterval = setInterval(myTime, 3000);
 
-// Freccia in basso
 function myTime() {
+// Freccia in basso
 downArrow.addEventListener('click', myTime);
   
   itemsCollector[counterImg].classList.add('hide');
