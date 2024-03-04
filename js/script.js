@@ -17,7 +17,7 @@ const images = [
 
 // ItemsWrapper mi stampa il tag img la le immagini dell'array con le sua apposita classe hide
 for (let i = 0; i < images.length; i++) {
-  const img = images[i];
+  let img = images[i];
   itemsWrapper.innerHTML += `
   <img class="img hide" src="${img}" alt="#">
   `;
@@ -34,6 +34,7 @@ const thumbnailCollector = document.getElementsByClassName('thumb');
 itemsCollector[counterImg].classList.remove('hide');
 // Active mi aggiunge la classe active enfatizzare l'immagine selezionata con le frecce;
 thumbnailCollector[counterImg].classList.add('active');
+
 
 // Freccia in alto
 topArrow.addEventListener('click', function(){
@@ -53,9 +54,13 @@ topArrow.addEventListener('click', function(){
   thumbnailCollector[counterImg].classList.add('active')
 })
 
-// Freccia in basso
-downArrow.addEventListener('click', function(){
 
+const myInterval = setInterval(myTime, 3000);
+
+// Freccia in basso
+function myTime() {
+downArrow.addEventListener('click', myTime);
+  
   itemsCollector[counterImg].classList.add('hide');
   thumbnailCollector[counterImg].classList.remove('active');
   counterImg++;
@@ -67,6 +72,6 @@ downArrow.addEventListener('click', function(){
 
   itemsCollector[counterImg].classList.remove('hide');
   thumbnailCollector[counterImg].classList.add('active');
+}
 
-})
 
