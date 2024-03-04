@@ -39,23 +39,30 @@ thumbnailCollector[counterImg].classList.add('active');
 // Freccia in alto
 topArrow.addEventListener('click', myImg);
 
-
 // Freccia in basso
-downArrow.addEventListener('click', myImg);
+downArrow.addEventListener('click', myImg)
+
   
 // Autoplay delle immagini
 const myInterval = setInterval(myImg, 3000);
 
 function myImg() {
+
+  // Mi toglie Active al click della freccia in alto;
   itemsCollector[counterImg].classList.add('hide');
+
+  // Mi toglie Active al click della freccia in alto;
   thumbnailCollector[counterImg].classList.remove('active');
   counterImg++;
   
+  // L'immagine quando é minore di 0 del contatore prende l'ultima immagine;
   if (counterImg >= images.length) {
     counterImg = 0;
   }
   
   itemsCollector[counterImg].classList.remove('hide');
+
+  // Mi aggiunge Active al click della freccia in alto;
   thumbnailCollector[counterImg].classList.add('active');
 }
 
