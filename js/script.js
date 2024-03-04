@@ -40,7 +40,7 @@ thumbnailCollector[counterImg].classList.add('active');
 topArrow.addEventListener('click', myImg);
 
 // Freccia in basso
-downArrow.addEventListener('click', myImg)
+downArrow.addEventListener('click', myImg);
 
   
 // Autoplay delle immagini
@@ -66,3 +66,7 @@ function myImg() {
   thumbnailCollector[counterImg].classList.add('active');
 }
 
+
+function stopAutoPlay() {
+  clearInterval(myInterval);
+}
