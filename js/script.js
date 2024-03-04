@@ -37,47 +37,20 @@ thumbnailCollector[counterImg].classList.add('active');
 
 
 // Freccia in alto
-topArrow.addEventListener('click', function(){
-  itemsCollector[counterImg].classList.add('hide');
+topArrow.addEventListener('click', myImg);
 
-  // Mi toglie Active al click della freccia in alto;
-  thumbnailCollector[counterImg].classList.remove('active');
-  counterImg--;
-  
-  // L'immagine quando é minore di 0 del contatore prende l'ultima immagine;
-  if (counterImg < 0) {
-    counterImg = images.length - 1;
-  }
-
-  itemsCollector[counterImg].classList.remove('hide');
-  // Mi aggiunge Active al click della freccia in alto;
-  thumbnailCollector[counterImg].classList.add('active')
-})
 
 // Freccia in basso
-downArrow.addEventListener('click', function() {
-  itemsCollector[counterImg].classList.add('hide');
-  thumbnailCollector[counterImg].classList.remove('active');
-  counterImg++;
+downArrow.addEventListener('click', myImg);
   
-  // Alla fine del contatore dell'array, l'immagine ritorna a 0
-  if (counterImg >= images.length) {
-    counterImg = 0;
-  }
-  
-  itemsCollector[counterImg].classList.remove('hide');
-  thumbnailCollector[counterImg].classList.add('active');
-});
-  
-// 
-const myInterval = setInterval(myTime, 3000);
+// Autoplay delle immagini
+const myInterval = setInterval(myImg, 3000);
 
-function myTime() {
+function myImg() {
   itemsCollector[counterImg].classList.add('hide');
   thumbnailCollector[counterImg].classList.remove('active');
   counterImg++;
   
-  // Alla fine del contatore dell'array, l'immagine ritorna a 0
   if (counterImg >= images.length) {
     counterImg = 0;
   }
